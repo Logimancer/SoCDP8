@@ -29,7 +29,8 @@
 #
 #    "/home/folko/socdp8/src/fpga/rtl/socdp8_package.vhd"
 #    "/home/folko/socdp8/src/fpga/rtl/io/uart.vhd"
-#    "/home/folko/socdp8/src/fpga/rtl/io/asr33.vhd"
+#    "/home/folko/socdp8/src/fpga/rtl/io/asr33.vhd" <-----------!!!!!!!!!!! This file is missing and pt08.vhd is in the directory and not listed
+#                                                                           So I replaced asr33.vhd below with pt08.vhd
 #    "/home/folko/socdp8/src/fpga/rtl/io/df32.vhd"
 #    "/home/folko/socdp8/src/fpga/rtl/io/pc04.vhd"
 #    "/home/folko/socdp8/src/fpga/rtl/io/tc08.vhd"
@@ -138,7 +139,7 @@ if { $::argc > 0 } {
 }
 
 # Set the directory path for the original project from where this script was exported
-set orig_proj_dir "[file normalize "$origin_dir/socdp8/src/fpga/vivado_projects/pynq-z2"]"
+set orig_proj_dir "[file normalize "$origin_dir/SoCDP8/src/fpga/vivado_projects/pynq-z2"]"
 
 # Create project
 create_project ${_xil_proj_name_} ./${_xil_proj_name_} -part xc7z020clg400-1
@@ -177,228 +178,228 @@ if {[string equal [get_filesets -quiet sources_1] ""]} {
 # Set 'sources_1' fileset object
 set obj [get_filesets sources_1]
 set files [list \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/socdp8_package.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/io/uart.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/io/asr33.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/io/df32.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/io/pc04.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/io/tc08.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/io/rf08.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/io/kw8i.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/io/rk8.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/io/io_controller.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/ram/axi_bram.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/cpu/instructions/inst_common_package.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/cpu/instructions/and.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/cpu/instructions/eae/asr.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/cpu/instructions/dca.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/cpu/instructions/eae/dvi.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/cpu/instructions/tad.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/cpu/instructions/isz.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/cpu/instructions/jms.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/cpu/instructions/jmp.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/cpu/instructions/iot.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/cpu/instructions/opr.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/cpu/instructions/eae/muy.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/cpu/instructions/eae/nmi.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/cpu/instructions/eae/shl.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/cpu/instructions/eae/lsr.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/cpu/instructions/instruction_multiplexer.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/cpu/interrupt_controller.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/cpu/memory_control.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/cpu/timing_manual.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/cpu/timing_auto.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/cpu/registers.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/cpu/pdp8.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/console/pidp8_console.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/console/xilinx_console_driver.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/console/lamp.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/rtl/console/console_mux.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/socdp8_package.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/io/uart.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/io/pt08.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/io/df32.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/io/pc04.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/io/tc08.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/io/rf08.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/io/kw8i.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/io/rk8.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/io/io_controller.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/ram/axi_bram.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/cpu/instructions/inst_common_package.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/cpu/instructions/and.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/cpu/instructions/eae/asr.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/cpu/instructions/dca.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/cpu/instructions/eae/dvi.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/cpu/instructions/tad.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/cpu/instructions/isz.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/cpu/instructions/jms.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/cpu/instructions/jmp.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/cpu/instructions/iot.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/cpu/instructions/opr.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/cpu/instructions/eae/muy.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/cpu/instructions/eae/nmi.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/cpu/instructions/eae/shl.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/cpu/instructions/eae/lsr.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/cpu/instructions/instruction_multiplexer.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/cpu/interrupt_controller.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/cpu/memory_control.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/cpu/timing_manual.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/cpu/timing_auto.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/cpu/registers.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/cpu/pdp8.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/console/pidp8_console.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/console/xilinx_console_driver.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/console/lamp.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/rtl/console/console_mux.vhd"] \
 ]
 add_files -norecurse -fileset $obj $files
 
 # Set 'sources_1' fileset file properties for remote files
-set file "$origin_dir/socdp8/src/fpga/rtl/socdp8_package.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/socdp8_package.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/io/uart.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/io/uart.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/io/asr33.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/io/pt08.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/io/df32.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/io/df32.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/io/pc04.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/io/pc04.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/io/tc08.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/io/tc08.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/io/rf08.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/io/rf08.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/io/kw8i.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/io/kw8i.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/io/rk8.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/io/rk8.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/io/io_controller.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/io/io_controller.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/ram/axi_bram.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/ram/axi_bram.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/cpu/instructions/inst_common_package.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/cpu/instructions/inst_common_package.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/cpu/instructions/and.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/cpu/instructions/and.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/cpu/instructions/eae/asr.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/cpu/instructions/eae/asr.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/cpu/instructions/dca.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/cpu/instructions/dca.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/cpu/instructions/eae/dvi.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/cpu/instructions/eae/dvi.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/cpu/instructions/tad.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/cpu/instructions/tad.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/cpu/instructions/isz.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/cpu/instructions/isz.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/cpu/instructions/jms.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/cpu/instructions/jms.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/cpu/instructions/jmp.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/cpu/instructions/jmp.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/cpu/instructions/iot.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/cpu/instructions/iot.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/cpu/instructions/opr.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/cpu/instructions/opr.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/cpu/instructions/eae/muy.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/cpu/instructions/eae/muy.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/cpu/instructions/eae/nmi.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/cpu/instructions/eae/nmi.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/cpu/instructions/eae/shl.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/cpu/instructions/eae/shl.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/cpu/instructions/eae/lsr.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/cpu/instructions/eae/lsr.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/cpu/instructions/instruction_multiplexer.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/cpu/instructions/instruction_multiplexer.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/cpu/interrupt_controller.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/cpu/interrupt_controller.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/cpu/memory_control.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/cpu/memory_control.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/cpu/timing_manual.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/cpu/timing_manual.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/cpu/timing_auto.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/cpu/timing_auto.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/cpu/registers.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/cpu/registers.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/cpu/pdp8.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/cpu/pdp8.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/console/pidp8_console.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/console/pidp8_console.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/console/xilinx_console_driver.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/console/xilinx_console_driver.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/console/lamp.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/console/lamp.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/rtl/console/console_mux.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/rtl/console/console_mux.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
@@ -416,9 +417,9 @@ if {[string equal [get_filesets -quiet constrs_1] ""]} {
 set obj [get_filesets constrs_1]
 
 # Add/Import constrs file and set constrs file properties
-set file "[file normalize "$origin_dir/socdp8/src/fpga/boards/pynq-z2_constraints.xdc"]"
+set file "[file normalize "$origin_dir/SoCDP8/src/fpga/boards/pynq-z2_constraints.xdc"]"
 set file_added [add_files -norecurse -fileset $obj [list $file]]
-set file "$origin_dir/socdp8/src/fpga/boards/pynq-z2_constraints.xdc"
+set file "$origin_dir/SoCDP8/src/fpga/boards/pynq-z2_constraints.xdc"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets constrs_1] [list "*$file"]]
 set_property -name "file_type" -value "XDC" -objects $file_obj
@@ -435,36 +436,36 @@ if {[string equal [get_filesets -quiet sim_1] ""]} {
 # Set 'sim_1' fileset object
 set obj [get_filesets sim_1]
 set files [list \
- [file normalize "${origin_dir}/socdp8/src/fpga/test/cpu/integration_test.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/test/uart_tb.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/test/cpu/timing_auto_tb.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/test/cpu/registers_tb.vhd"] \
- [file normalize "${origin_dir}/socdp8/src/fpga/test/cpu/timing_manual_tb.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/test/cpu/integration_test.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/test/uart_tb.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/test/cpu/timing_auto_tb.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/test/cpu/registers_tb.vhd"] \
+ [file normalize "${origin_dir}/SoCDP8/src/fpga/test/cpu/timing_manual_tb.vhd"] \
 ]
 add_files -norecurse -fileset $obj $files
 
 # Set 'sim_1' fileset file properties for remote files
-set file "$origin_dir/socdp8/src/fpga/test/cpu/integration_test.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/test/cpu/integration_test.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sim_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL 2008" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/test/uart_tb.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/test/uart_tb.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sim_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL 2008" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/test/cpu/timing_auto_tb.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/test/cpu/timing_auto_tb.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sim_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL 2008" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/test/cpu/registers_tb.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/test/cpu/registers_tb.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sim_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL 2008" -objects $file_obj
 
-set file "$origin_dir/socdp8/src/fpga/test/cpu/timing_manual_tb.vhd"
+set file "$origin_dir/SoCDP8/src/fpga/test/cpu/timing_manual_tb.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sim_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL 2008" -objects $file_obj
