@@ -1,0 +1,21 @@
+Notes on implementation:
+
+For Vivado (2019.2):
+1. Clone repo
+2. not sure if it's required, but added the files in <repo>/support/pynq-z2.zip
+    to <Xilinx installation directory>\Vivado\<version>\data\boards\board_files
+3. from *outside* repo directory, run in Vivado Tcl Shell:
+    source SoCDP8/src/fpga/boards/pynq-z2-project.tcl
+4. In Vivado 2019.2, open project pynq-z2.xpr from directory pynq-z2,
+    which was just made by the previously run tcl script 
+    in the parent directory of the git repo.
+5. From "Tools" dropdown, choose "Run Tcl Script..."
+6. Run <repo>/src/fpga/boards/blockdesign/pynq_z2_block.tcl (this creates the block diagram)
+7. In "Sources" tab of subwindow to right of "Project Manager" pane,
+    right click "pynq_z2_block" and choose "Create HDL Wrapper"
+8. Choose "Let Vivado manage wrapper and auto update.
+9. Select the new block HDL in design sources, right click and set as Top Level Design 
+10. in "Flow Navigator" pane, all the way to the left, click "Run Synthesis"
+11. when prompted after Synthesis, or if not prompted, run implementation
+12. Generate Bitstream
+13. Program Device
